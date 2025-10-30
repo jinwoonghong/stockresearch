@@ -1,8 +1,8 @@
-import axios from 'axios';
-import { Stock, StockPrice, NewsItem, ChartData, StockInsight } from '../types';
+// import axios from 'axios'; // 실제 API 연동 시 사용
+import type { Stock, StockPrice, NewsItem, ChartData, StockInsight } from '../types';
 
 // Mock API - 실제 환경에서는 Alpha Vantage, Yahoo Finance API, 또는 한국투자증권 API 등을 사용
-const API_BASE_URL = 'https://api.example.com'; // 실제 API URL로 교체 필요
+// const API_BASE_URL = 'https://api.example.com'; // 실제 API URL로 교체 필요
 
 // LocalStorage 키
 const STORAGE_KEY = 'stock-watchlist';
@@ -66,7 +66,7 @@ const generateMockNews = (ticker: string): NewsItem[] => {
   }));
 };
 
-const generateMockChartData = (ticker: string): ChartData[] => {
+const generateMockChartData = (): ChartData[] => {
   const data: ChartData[] = [];
   let basePrice = 100 + Math.random() * 50;
   
@@ -119,10 +119,10 @@ export const fetchStockNews = async (ticker: string): Promise<NewsItem[]> => {
   });
 };
 
-export const fetchChartData = async (ticker: string): Promise<ChartData[]> => {
+export const fetchChartData = async (_ticker: string): Promise<ChartData[]> => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(generateMockChartData(ticker));
+      resolve(generateMockChartData());
     }, 700);
   });
 };

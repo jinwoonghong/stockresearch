@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { X, TrendingUp, TrendingDown, ExternalLink } from 'lucide-react';
-import { LineChart, Line, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import { fetchStockPrice, fetchStockNews, fetchChartData, fetchStockInsight } from '../services/stockService';
-import { StockPrice, NewsItem, ChartData, StockInsight } from '../types';
+import type { StockPrice, NewsItem, ChartData, StockInsight } from '../types';
 
 interface StockDetailProps {
   ticker: string;

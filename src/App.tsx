@@ -3,7 +3,7 @@ import { Plus, TrendingUp } from 'lucide-react';
 import StockCard from './components/StockCard';
 import AddStockModal from './components/AddStockModal';
 import StockDetail from './components/StockDetail';
-import { Stock, StockPrice } from './types';
+import type { Stock, StockPrice } from './types';
 import { getSavedStocks, saveStock, removeStock, fetchStockPrice } from './services/stockService';
 import './App.css';
 
